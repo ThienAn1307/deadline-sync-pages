@@ -29,6 +29,11 @@
         <strong>Google Calendar:</strong> a secondary calendar created by the app, and the
         events in that calendar.
       </li>
+      <li>
+        <strong>Gmail (read-only):</strong> only emails sent by Slack (from slack.com) in the
+        last two weeks, to find Slack notifications from the lecturers the user follows. No
+        other email is read, and nothing in Gmail is changed.
+      </li>
     </ul>
 
     <h2>How the data is used</h2>
@@ -46,10 +51,11 @@
 
     <h2>Sharing</h2>
     <p>
-      Google user data is never sold, used for advertising, or shared with anyone. When a
-      deadline is written as free text (for example in a Classroom announcement), that text
-      may be sent to the Anthropic API for the sole purpose of extracting the deadline. It is
-      not used to train AI models.
+      Google user data is never sold, used for advertising, or shared with anyone. To find the
+      deadlines in them, the text of the Slack notification emails described above, and any
+      text the user pastes in, is sent to the Google Gemini API, which only returns the
+      deadlines it finds; the app stores those deadlines, not the emails. No other data from
+      Gmail, and nothing from Google Calendar or Google Classroom, is sent to an AI model.
     </p>
 
     <h2>Limited Use</h2>
